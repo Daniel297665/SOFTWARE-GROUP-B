@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TideNest | Clean Spaces. Happy Lives.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#087f75;--navy:#102b3b;--muted:#607581;--border:#e1eaea;--mint:#f0faf7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--navy);background:#fff}.container{width:min(1224px,calc(100% - 48px));margin:auto}
+header{height:68px;background:#fff;border-bottom:1px solid #e6eeee;display:flex;align-items:center;position:sticky;top:0;z-index:10}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;flex:0 0 245px}.brand-mark{width:54px;height:49px;flex-shrink:0}.brand-text strong{display:block;font-size:29px;line-height:1;font-weight:800;letter-spacing:-1.2px}.brand-text strong span{color:var(--teal)}.brand-text small{display:block;margin-top:4px;font-size:10px;font-weight:600;color:#263d49}
+nav{display:flex;align-items:center;gap:35px;margin:0 auto}nav a{text-decoration:none;font-size:12px;font-weight:700;padding:25px 0 21px;border-bottom:2px solid transparent;white-space:nowrap}nav a.active,nav a:hover{color:var(--teal);border-color:var(--teal)}
+.auth{display:flex;gap:12px;flex:0 0 auto}.auth a{min-width:80px;padding:10px 17px;border:1.5px solid var(--teal);border-radius:9px;text-align:center;text-decoration:none;font-size:12px;font-weight:700}.auth .signup{color:#fff;background:var(--teal)}.auth .login{color:var(--teal)}.menu-toggle{display:none}
+.hero{height:400px;display:flex;align-items:center;background-color:#eaf6fa;background-image:linear-gradient(90deg,#eaf6fa 0%,rgba(234,246,250,.98) 34%,rgba(234,246,250,.87) 43%,rgba(234,246,250,.2) 59%,rgba(234,246,250,0) 68%),url('table-cleaning.jpeg');background-size:100% 100%;background-position:center;background-repeat:no-repeat}
+.hero-copy{max-width:530px;padding:0}.pill{display:inline-block;margin-bottom:16px;padding:6px 12px;border-radius:20px;background:#d5e9e9;color:#16494d;font-size:12px;font-weight:650}
+h1{margin:0 0 13px;font-size:48px;line-height:1.1;letter-spacing:-1.5px;font-weight:800;color:#102c3c}h1 span{color:var(--teal)}.hero-copy>p{max-width:490px;margin:0 0 20px;color:#172f3c;font-size:15px;line-height:1.55}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:42px;padding:11px 22px;border:1.5px solid var(--teal);border-radius:8px;text-decoration:none;font-size:12px;font-weight:700;cursor:pointer}.btn-primary{background:var(--teal);color:#fff}.btn-secondary{background:#f7fcfc;color:var(--teal)}
+.proof-points{display:flex;align-items:center;gap:20px;margin-top:27px}.proof{display:flex;align-items:center;gap:10px;padding-right:18px;border-right:1px solid #b7d1d3;min-height:35px;color:#284a55;font-size:11px;line-height:1.45}.proof:last-child{border:0;padding:0}.proof svg{width:27px;height:27px;flex-shrink:0;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.services-page{min-height:calc(100vh - 68px);padding:54px 0 70px;background:#fff}.page-head{text-align:center;margin-bottom:30px}.kicker{margin:0 0 7px;color:var(--teal);font-size:12px;font-weight:750}.section-title{margin:0 0 8px;font-size:32px;line-height:1.2;letter-spacing:-.7px;font-weight:800}.subtitle{margin:0 auto;color:#647783;font-size:14px;line-height:1.6;max-width:700px}
+.service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;text-align:left}.card{overflow:hidden;border:1px solid #e1e9e9;border-radius:11px;background:#fff;box-shadow:0 2px 5px #12313b0a}.service-image{width:100%;height:155px;display:block;object-fit:cover;background:#e5efec}.card-body{padding:14px 19px 16px}.card-heading{display:flex;align-items:center;gap:10px;margin-bottom:8px}.service-icon{display:grid;place-items:center;width:42px;height:42px;flex-shrink:0;border-radius:50%;background:#eaf8f7;color:var(--teal)}.service-icon svg{width:23px;height:23px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.card h3{margin:0;font-size:15px;line-height:1.3;font-weight:750}.card p{min-height:40px;margin:0 0 12px;color:#607580;font-size:12px;line-height:1.5}.price{display:block;margin-bottom:12px;color:#087c70;font-size:13px;font-weight:750}.book-now{display:block;width:100%;padding:9px 10px;border:1px solid var(--teal);border-radius:7px;color:var(--teal);text-align:center;text-decoration:none;font-size:12px;font-weight:700}.book-now:hover{background:var(--teal);color:#fff}
+.how-page,.about-page,.contact-page{min-height:calc(100vh - 68px);padding:60px 0;background:#f0faf7}.simple-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}.simple-card{padding:28px;border:1px solid #e1e9e9;border-radius:12px;background:#fff}.simple-card h3{margin:12px 0 8px;font-size:17px}.simple-card p{color:#607580;font-size:14px;line-height:1.6}.step-num{display:grid;place-items:center;width:45px;height:45px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:28px;text-align:left}.benefit{display:flex;align-items:center;gap:13px}.benefit-icon{display:grid;place-items:center;width:55px;height:55px;flex-shrink:0;border-radius:50%;background:var(--teal);color:#fff}.benefit-icon svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.benefit h3{margin:0 0 5px;font-size:12px;font-weight:750}.benefit p{margin:0;color:#637985;font-size:10.5px;line-height:1.4}
+.contact-box{max-width:620px;margin:25px auto 0;padding:28px;background:#fff;border:1px solid #e1e9e9;border-radius:12px}.contact-box form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.contact-box label{font-size:13px;font-weight:650}.contact-box input,.contact-box textarea{width:100%;margin-top:6px;padding:12px;border:1px solid #cbdcda;border-radius:7px;font:14px Inter,Arial,sans-serif}.contact-box textarea{min-height:110px;resize:vertical}.full{grid-column:1/-1}.contact-box button{border:0}
+.hidden{display:none!important}footer{padding:22px 0;background:#102d3b;color:#eaf6f5;text-align:center;font-size:12px}footer p{margin:5px}
+@media(max-width:1050px){.container{width:calc(100% - 36px)}.brand{flex-basis:220px}.brand-text strong{font-size:25px}nav{gap:20px}.service-grid{gap:13px}.card-body{padding:12px}.benefit-grid{gap:14px}}
+@media(max-width:760px){header{height:66px}.container{width:calc(100% - 32px)}.brand{flex:1}.brand-mark{width:44px}.brand-text strong{font-size:24px}nav{display:none;position:absolute;top:65px;left:0;right:0;margin:0;padding:12px 20px 18px;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 8px 15px #12313b12;flex-direction:column;align-items:stretch;gap:0}nav.open{display:flex}nav a{padding:12px 0;border:0}.auth{gap:6px}.auth a{min-width:0;padding:9px 11px}.menu-toggle{display:block;border:0;background:none;color:var(--teal);font-size:26px;padding:0}.hero{height:auto;min-height:500px;background-image:linear-gradient(90deg,rgba(234,246,250,.98),rgba(234,246,250,.86) 60%,rgba(234,246,250,.4)),url('images/hero_cleaner.jpg');background-size:cover;background-position:center}.hero-copy{padding:38px 0}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.service-image{height:130px}.benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.simple-grid{grid-template-columns:1fr}.proof-points{gap:12px}.proof{padding-right:10px;gap:7px}}
+@media(max-width:480px){.brand-mark{width:38px}.brand-text strong{font-size:21px}.brand-text small{font-size:8px}.auth a{font-size:10px;padding:8px}.hero{min-height:550px;background-position:58% center}.pill{font-size:11px}h1{font-size:39px;letter-spacing:-1.2px}.hero-copy>p{font-size:14px}.proof-points{flex-wrap:wrap;gap:13px}.proof{flex:1 1 28%;border:0;padding:0;font-size:10px;align-items:flex-start}.proof svg{width:23px;height:23px}.section-title{font-size:25px}.subtitle{font-size:12px;padding:0 6px}.service-grid{gap:10px}.service-image{height:95px}.card-body{padding:9px}.card-heading{gap:6px}.service-icon{width:35px;height:35px}.service-icon svg{width:18px;height:18px}.card h3{font-size:12px}.card p{font-size:10px;min-height:48px}.price{font-size:11px}.book-now{font-size:10px;padding:8px 4px}.benefit-grid{grid-template-columns:1fr;gap:16px}.benefit-icon{width:48px;height:48px}.contact-box{padding:18px}.contact-box form{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="header-inner">
+<a class="brand" href="#home" data-page="home" aria-label="TideNest homepage">
+<svg class="brand-mark" viewBox="0 0 70 62" aria-hidden="true"><path d="M5 25 31 3 58 25 53 30 31 12 10 30Z" fill="#0a877c"/><path d="M13 27 31 13 50 27V43H13Z" fill="#0c7770"/><path d="M27 43V31H37V43" fill="none" stroke="#fff" stroke-width="3"/><path d="M4 48Q16 40 27 48T50 48L60 44Q54 58 34 59Q14 59 4 48Z" fill="#20a4a0"/><path d="M4 51Q16 45 28 51T51 51" fill="none" stroke="#fff" stroke-width="2"/></svg>
+<span class="brand-text"><strong>Tide<span>Nest</span></strong><small>Clean Spaces. Happy Lives.</small></span></a>
+<nav id="nav"><a class="active" href="#home" data-page="home">Home</a><a href="#services" data-page="services">Services</a><a href="#how-it-works" data-page="how">How It Works</a><a href="#about" data-page="about">About</a><a href="#contact" data-page="contact">Contact</a></nav>
+<div class="auth"><a class="login" href="#login" data-page="login">Log In</a><a class="signup" href="#signup" data-page="signup">Sign Up</a></div><button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+</div></header>
+<main>
+<section class="page" id="page-home">
+<section class="hero"><div class="container"><div class="hero-copy">
+<span class="pill">Professional Cleaning Services</span><h1>Your home deserves<br>a <span>fresh</span> start.</h1>
+<p>TideNest connects you with trusted cleaners for your home and personal spaces. Book, pay and relax — we’ll handle the rest.</p>
+<div class="hero-buttons"><a class="btn btn-primary" href="#services" data-page="services">Book a Service <span>→</span></a><a class="btn btn-secondary" href="#services" data-page="services">Explore Services</a></div>
+<div class="proof-points"><div class="proof"><svg viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5Z"/><path d="m8 12 2.5 2.5L16 9"/></svg><span>Trusted &amp; Vetted<br>Cleaners</span></div><div class="proof"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Easy Online<br>Booking</span></div><div class="proof"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20m-16 5h4"/></svg><span>Secure<br>Payments</span></div></div>
+</div></div></section>
+<section class="why" style="padding:28px 0;background:#f0faf7;text-align:center"><div class="container"><p class="kicker">Why Choose TideNest?</p><h2 class="section-title">Reliable. Professional. Convenient.</h2><div class="benefit-grid">
+<div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><div><h3>Verified Cleaners</h3><p>Background checked &amp; trained.</p></div></div>
+<div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4m-3 14h2"/></svg></span><div><h3>Easy Booking</h3><p>Book in minutes, anytime.</p></div></div>
+<div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5Z"/><path d="m8 12 2.5 2.5L16 9"/></svg></span><div><h3>Secure Payments</h3><p>M-Pesa and card options.</p></div></div>
+<div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24"><path d="m12 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z"/></svg></span><div><h3>Customer Support</h3><p>We're here to help.</p></div></div></div></div></section>
+</section>
+<section class="page services-page hidden" id="page-services"><div class="container"><div class="page-head"><p class="kicker">Our Services</p><h2 class="section-title">Cleaning solutions for every need</h2><p class="subtitle">Choose from a range of professional cleaning services tailored to your space and budget.</p></div>
+<div class="service-grid">
+<article class="card"><img class="service-image" src="house-cleaning.jpeg" alt="Clean and comfortable living room"><div class="card-body"><div class="card-heading"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg></span><h3>House Cleaning</h3></div><p>General cleaning for your living room, bedroom, kitchen and more.</p><strong class="price">From KSh 1,500</strong><a class="book-now" href="#booking" data-page="booking" data-service="House Cleaning">Book Now</a></div></article>
+<article class="card"><img class="service-image" src="deep-cleaning.jpeg" alt="Clean modern bathroom"><div class="card-body"><div class="card-heading"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9 7 5 11 5 15a7 7 0 0 0 14 0c0-4-4-8-7-13Z"/></svg></span><h3>Deep Cleaning</h3></div><p>Thorough cleaning for a healthier, fresher environment.</p><strong class="price">From KSh 3,000</strong><a class="book-now" href="#booking" data-page="booking" data-service="Deep Cleaning">Book Now</a></div></article>
+<article class="card"><img class="service-image" src="sofa-cleaning.jpeg" alt="Comfortable sofa in a living room"><div class="card-body"><div class="card-heading"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M3 12a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v6H3Z"/><path d="M6 18v2m12-2v2"/></svg></span><h3>Sofa &amp; Upholstery</h3></div><p>Clean and refresh your sofas, cushions and furniture.</p><strong class="price">From KSh 1,000</strong><a class="book-now" href="#booking" data-page="booking" data-service="Sofa & Upholstery">Book Now</a></div></article>
+<article class="card"><img class="service-image" src="window-cleaning.jpeg" alt="Window cleaning"><div class="card-body"><div class="card-heading"><span class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/></svg></span><h3>Window Cleaning</h3></div><p>Crystal clear windows for a brighter space.</p><strong class="price">From KSh 800</strong><a class="book-now" href="#booking" data-page="booking" data-service="Window Cleaning">Book Now</a></div></article>
+</div></div></section>
+<section class="page how-page hidden" id="page-how"><div class="container"><div class="page-head"><p class="kicker">How It Works</p><h2 class="section-title">A cleaner space in three simple steps</h2><p class="subtitle">Booking trusted cleaning services with TideNest is simple.</p></div><div class="simple-grid"><article class="simple-card"><span class="step-num">1</span><h3>Choose your service</h3><p>Explore our cleaning options and choose the service that fits your home and budget.</p></article><article class="simple-card"><span class="step-num">2</span><h3>Book a convenient time</h3><p>Provide your location and preferred date so your cleaning can be planned.</p></article><article class="simple-card"><span class="step-num">3</span><h3>Relax and enjoy</h3><p>Your cleaner takes care of the job while you enjoy a fresher space.</p></article></div></div></section>
+<section class="page about-page hidden" id="page-about"><div class="container"><div class="page-head"><p class="kicker">About TideNest</p><h2 class="section-title">Clean Spaces. Happy Lives.</h2><p class="subtitle">TideNest helps people connect with cleaning professionals for homes and everyday spaces. Our goal is to make finding, booking, and paying for cleaning services clear and convenient.</p></div><div class="benefit-grid"><div class="benefit"><span class="benefit-icon">✓</span><div><h3>Verified Cleaners</h3><p>Trusted, professional service.</p></div></div><div class="benefit"><span class="benefit-icon">⌚</span><div><h3>Easy Booking</h3><p>Convenient service scheduling.</p></div></div><div class="benefit"><span class="benefit-icon">▣</span><div><h3>Secure Payments</h3><p>Designed for convenient payment.</p></div></div><div class="benefit"><span class="benefit-icon">☆</span><div><h3>Customer Support</h3><p>Help when you need it.</p></div></div></div></div></section>
+<section class="page contact-page hidden" id="page-contact"><div class="container"><div class="page-head"><p class="kicker">Contact Us</p><h2 class="section-title">How can we help?</h2><p class="subtitle">Send a message to the TideNest team.</p></div><div class="contact-box"><form id="contactForm"><label>Your name<input required placeholder="Your name"></label><label>Email address<input required type="email" placeholder="you@example.com"></label><label class="full">Message<textarea required placeholder="Tell us how we can help"></textarea></label><button class="btn btn-primary full" type="submit">Send Message</button></form><p id="contactMessage" role="status"></p></div></div></section>
+<section class="page hidden" id="page-booking" style="padding:50px 0;background:#f0faf7;min-height:calc(100vh - 68px)"><div class="container"><div class="page-head"><p class="kicker">Get Started</p><h2 class="section-title">Book a cleaning service</h2><p class="subtitle">Choose your service and preferred date to preview your booking.</p></div><div class="contact-box"><form id="bookingForm"><label>Your name<input id="customerName" required placeholder="Enter your name"></label><label>Cleaning service<select id="serviceSelect" required><option value="">Select a service</option><option>House Cleaning</option><option>Deep Cleaning</option><option>Sofa &amp; Upholstery</option><option>Window Cleaning</option></select></label><label>Preferred date<input id="bookingDate" type="date" required></label><label>Location<input id="location" required placeholder="e.g. Kutus, Kenya"></label><button class="btn btn-primary full" type="submit">Submit Booking →</button></form><p id="bookingMessage" role="status"></p></div></div></section>
+<section class="page hidden" id="page-login" style="padding:50px 0;background:#f0faf7;min-height:calc(100vh - 68px)"><div class="container"><div class="page-head"><p class="kicker">Welcome Back</p><h2 class="section-title">Log in to TideNest</h2><p class="subtitle">Enter your credentials to access your account.</p></div><div class="contact-box"><form id="loginForm"><label class="full">Email address<input type="email" required placeholder="you@example.com"></label><label class="full">Password<input type="password" required placeholder="Enter password"></label><button class="btn btn-primary full" type="submit">Log In</button></form><p id="loginMessage" role="status"></p></div></div></section>
+<section class="page hidden" id="page-signup" style="padding:50px 0;background:#f0faf7;min-height:calc(100vh - 68px)"><div class="container"><div class="page-head"><p class="kicker">Join TideNest</p><h2 class="section-title">Create your account</h2><p class="subtitle">Create an account to book and manage cleaning services.</p></div><div class="contact-box"><form id="signupForm"><label>Your full name<input required placeholder="Enter your full name"></label><label>Email address<input type="email" required placeholder="you@example.com"></label><label class="full">Password<input type="password" minlength="6" required placeholder="At least 6 characters"></label><button class="btn btn-primary full" type="submit">Create Account</button></form><p id="signupMessage" role="status"></p></div></div></section>
+</main><footer><div class="container"><strong>TideNest</strong><p>Clean Spaces. Happy Lives.</p><p>© <span id="year"></span> TideNest. Frontend demonstration.</p></div></footer>
+<script>
+const API_BASE = window.location.origin; // same origin when served by backend
+
+// Auth helpers
+function getToken(){ return localStorage.getItem('tidenest_token'); }
+function setAuth(user, token){
+  localStorage.setItem('tidenest_token', token);
+  localStorage.setItem('tidenest_user', JSON.stringify(user));
+  updateAuthUI();
+}
+function clearAuth(){
+  localStorage.removeItem('tidenest_token');
+  localStorage.removeItem('tidenest_user');
+  updateAuthUI();
+}
+function updateAuthUI(){
+  const user = JSON.parse(localStorage.getItem('tidenest_user') || 'null');
+  const authDiv = document.querySelector('.auth');
+  if(!authDiv) return;
+  if(user){
+    authDiv.innerHTML = `<span style="font-size:12px;font-weight:600;color:var(--navy);margin-right:8px">Hi, ${user.name.split(' ')[0]}</span>
+      <a class="login" href="#" id="logoutBtn" style="min-width:auto">Log Out</a>`;
+    document.getElementById('logoutBtn')?.addEventListener('click', e => { e.preventDefault(); clearAuth(); });
+  } else {
+    authDiv.innerHTML = `<a class="login" href="#login" data-page="login">Log In</a><a class="signup" href="#signup" data-page="signup">Sign Up</a>`;
+    // re-bind data-page clicks
+    authDiv.querySelectorAll('[data-page]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      showPage(a.dataset.page);
+    }));
+  }
+}
+
+const pages=['home','services','how','about','contact','booking','login','signup'];
+function showPage(name,updateHash=true){
+ if(!pages.includes(name))name='home';
+ pages.forEach(p=>document.getElementById('page-'+p).classList.toggle('hidden',p!==name));
+ document.querySelectorAll('[data-page]').forEach(a=>a.classList.toggle('active',a.dataset.page===name));
+ document.getElementById('nav').classList.remove('open');
+ document.getElementById('menuToggle').setAttribute('aria-expanded','false');
+ document.getElementById('menuToggle').textContent='☰';
+ if(updateHash)history.pushState({page:name},'',name==='home'?'#home':'#'+(name==='how'?'how-it-works':name));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(a.dataset.service)document.getElementById('serviceSelect').value=a.dataset.service;showPage(a.dataset.page);}));
+window.addEventListener('popstate',()=>{const hash=location.hash.slice(1);const map={'how-it-works':'how'};showPage(map[hash]||hash||'home',false);});
+const toggle=document.getElementById('menuToggle'),nav=document.getElementById('nav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰';});
+const dateInput=document.getElementById('bookingDate'),today=new Date();dateInput.min=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+
+// ----- Booking form -----
+document.getElementById('bookingForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = document.getElementById('bookingMessage');
+  const btn = e.target.querySelector('button[type=submit]');
+  const name = document.getElementById('customerName').value.trim();
+  const service = document.getElementById('serviceSelect').value;
+  const date = dateInput.value;
+  const location = document.getElementById('location').value.trim();
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  msg.textContent = '';
+  msg.style.color = '';
+
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    const token = getToken();
+    if (token) headers['Authorization'] = 'Bearer ' + token;
+
+    const res = await fetch(API_BASE + '/api/bookings', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ name, service, date, location })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Booking failed');
+
+    msg.style.color = 'var(--teal)';
+    msg.textContent = `Thanks, ${name}! Your ${service} request for ${date} in ${location} has been received. We will contact you shortly.`;
+    e.target.reset();
+  } catch (err) {
+    msg.style.color = '#c0392b';
+    msg.textContent = err.message || 'Something went wrong. Please try again.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Submit Booking →';
+  }
+});
+
+// ----- Contact form -----
+document.getElementById('contactForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = document.getElementById('contactMessage');
+  const btn = e.target.querySelector('button[type=submit]');
+  const inputs = e.target.querySelectorAll('input, textarea');
+  const name = inputs[0].value.trim();
+  const email = inputs[1].value.trim();
+  const message = inputs[2].value.trim();
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  msg.textContent = '';
+
+  try {
+    const res = await fetch(API_BASE + '/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed to send');
+
+    msg.style.color = 'var(--teal)';
+    msg.textContent = data.message;
+    e.target.reset();
+  } catch (err) {
+    msg.style.color = '#c0392b';
+    msg.textContent = err.message || 'Could not send message.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+});
+
+// ----- Login form -----
+document.getElementById('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = document.getElementById('loginMessage');
+  const btn = e.target.querySelector('button[type=submit]');
+  const inputs = e.target.querySelectorAll('input');
+  const email = inputs[0].value.trim();
+  const password = inputs[1].value;
+
+  btn.disabled = true;
+  btn.textContent = 'Logging in...';
+  msg.textContent = '';
+
+  try {
+    const res = await fetch(API_BASE + '/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Login failed');
+
+    setAuth(data.user, data.token);
+    msg.style.color = 'var(--teal)';
+    msg.textContent = `Welcome back, ${data.user.name}!`;
+    setTimeout(() => showPage('home'), 800);
+  } catch (err) {
+    msg.style.color = '#c0392b';
+    msg.textContent = err.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Log In';
+  }
+});
+
+// ----- Signup form -----
+document.getElementById('signupForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const msg = document.getElementById('signupMessage');
+  const btn = e.target.querySelector('button[type=submit]');
+  const inputs = e.target.querySelectorAll('input');
+  const name = inputs[0].value.trim();
+  const email = inputs[1].value.trim();
+  const password = inputs[2].value;
+
+  btn.disabled = true;
+  btn.textContent = 'Creating account...';
+  msg.textContent = '';
+
+  try {
+    const res = await fetch(API_BASE + '/api/auth/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Signup failed');
+
+    setAuth(data.user, data.token);
+    msg.style.color = 'var(--teal)';
+    msg.textContent = `Account created! Welcome, ${data.user.name}.`;
+    setTimeout(() => showPage('home'), 800);
+  } catch (err) {
+    msg.style.color = '#c0392b';
+    msg.textContent = err.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Create Account';
+  }
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+updateAuthUI();
+const initial = location.hash.slice(1);
+const initialMap = {'how-it-works':'how'};
+if (initial && pages.includes(initialMap[initial] || initial)) showPage(initialMap[initial] || initial, false);
+
+</script>
+</body></html>

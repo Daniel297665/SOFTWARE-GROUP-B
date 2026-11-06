@@ -1,0 +1,6 @@
+node_modules/
+tidenest-backend/db/data/*.json
+!tidenest-backend/db/data/.gitkeep
+.DS_Store
+*.log
+.env

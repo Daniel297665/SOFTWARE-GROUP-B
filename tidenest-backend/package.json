@@ -1,0 +1,13 @@
+{
+  "name": "tidenest-backend",
+  "version": "1.0.0",
+  "description": "TideNest cleaning services backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["tidenest", "cleaning", "booking"],
+  "author": "TideNest",
+  "license": "MIT"
+}
